@@ -60,15 +60,30 @@ main {
 section {
     position: relative;
     min-height: 80vh;
+    margin-bottom: 50px;
 }
 
-
+@media only screen and (max-width: 420px){
+    section{
+        
+        height: 80vh;
+        overflow:auto;
+        
+        
+    }
+    .navbar__menu{
+        height: auto;
+    }
+    
+   
+}
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
 .navbar__menu{
     background-color:rgb(15, 105, 209); 
     padding: 2px;
+    
 }
 .navbar__menu ul {
     padding-left: 5em;
@@ -76,9 +91,9 @@ section {
     text-align: right;
    
 }
- a{
+a{
      color: cornsilk;
- }
+}
 .navbar__menu li {
     display: inline-block;
     padding-right: 2em;
@@ -106,7 +121,8 @@ section {
     background: #fff;
     position: fixed;
     top: 0;
-    width: 100%;
+    
+    width: 100% ;
     z-index: 5;
 }
 
