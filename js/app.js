@@ -11,7 +11,9 @@
  * 
  * JS Standard: ESlint
  * 
-*/
+*/  
+
+
 
 /**
  * Define Global Variables
@@ -83,26 +85,17 @@ function activateNavLinks(currentSectionId) {
 
 
 // Scroll to anchor ID using scrollTO event
-
-function activateCurrentSection(currentSection) 
-{
-    currentSection.classList.add("active");
-
-    deactivateNavLinks();
-    activateNavLinks(currentSection.getAttribute('id'));
-}
-
-function activateNavLinks(currentSectionId)
- {
-    let navbarLink = document.querySelectorAll(".nav__hyperlink");
-    //console.log(navbarLink);
-        navbarLink.forEach((element)=>{
-            if(element.getAttribute('href') == `#${currentSectionId}`) {
-                element.classList.add("active-nav");
-            }
+function scrollToSectionOnClick() {
+    let navbarAnchors = document.querySelectorAll(".nav__hyperlink");
+    navbarAnchors.forEach((element) => {
+        element.addEventListener("click", function(event) {
+            event.preventDefault();
+            document.querySelector(element.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
+    });
 }
-
 
 
 /**
@@ -125,6 +118,8 @@ function buildNav() {
 
 // Scroll to section on link click
 scrollToSectionOnClick();
+
+
 
 // Set sections as active
 window.addEventListener('scroll', function (event) {
