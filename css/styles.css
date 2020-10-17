@@ -67,7 +67,7 @@ section {
 
 /* Navigation Styles*/
 .navbar__menu{
-    background-color:rgb(15, 105, 209);
+    background-color:rgb(15, 105, 209); 
     padding: 2px;
 }
 .navbar__menu ul {
@@ -76,7 +76,9 @@ section {
     text-align: right;
    
 }
-
+ a{
+     color: cornsilk;
+ }
 .navbar__menu li {
     display: inline-block;
     padding-right: 2em;
@@ -90,9 +92,11 @@ section {
     text-decoration: none;
     color: #000;
 }
-
-.navbar__menu .menu__link:hover {
-    background: rgb(15, 6, 6);
+.active-nav{
+    color: black;
+}
+.navbar__menu .menu__link:active {
+    background: rgb(189, 19, 19);
     color: #fff;
     transition: ease 0.3s all;
 }
